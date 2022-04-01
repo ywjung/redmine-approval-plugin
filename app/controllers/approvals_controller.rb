@@ -2,10 +2,10 @@ class ApprovalsController < ApplicationController
   include ApprovalsHelper
   include ApplicationHelper
 
-  before_filter :find_project,                :only => [:approve]
-  before_filter :find_repository_changeset,   :only => [:approve]
-  before_filter :authorize,                   :only => [:approve]
-  before_filter :authorize_global,            :only => [:activate]
+  before_action :find_project,                :only => [:approve]
+  before_action :find_repository_changeset,   :only => [:approve]
+  before_action :authorize,                   :only => [:approve]
+  before_action :authorize_global,            :only => [:activate]
   accept_api_auth :approve
   unloadable
 
