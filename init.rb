@@ -24,7 +24,7 @@ end
 SettingsHelper.send(:include, SettingsHelperPatch)
 RepositoriesHelper.send(:include, ApprovalsHelper)
 
-ActionDispatch::Callbacks.to_prepare do
+ActionDispatch::Callbacks.to_param do
   Repository::Subversion.send(:include, SubversionPatch)
   Redmine::Scm::Adapters::SubversionAdapter.send(:include, SubversionAdapterPatch)
 
