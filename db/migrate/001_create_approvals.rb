@@ -1,4 +1,4 @@
-class CreateApprovals < ActiveRecord::Migration
+class CreateApprovals < ActiveRecord::Migration[5.1]
   def change
     create_table :approvals do |t|
       t.references :changeset, :null => false
